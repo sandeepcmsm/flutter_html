@@ -13,7 +13,7 @@ Style declarationsToStyle(Map<String?, List<css.Expression>> declarations) {
     if (value.isNotEmpty) {
       switch (property) {
         case 'background-color':
-          style.backgroundColor = ExpressionMapping.expressionToColor(value.first) ?? style.backgroundColor;
+          style.backgroundColor =  style.backgroundColor;
           break;
         case 'border':
           List<css.LiteralTerm?>? borderWidths = value.whereType<css.LiteralTerm>().toList();
@@ -34,7 +34,7 @@ Style declarationsToStyle(Map<String?, List<css.Expression>> declarations) {
           style.border = ExpressionMapping.expressionToBorder(borderWidths, borderStyles, borderColors);
           break;
         case 'color':
-          style.color = ExpressionMapping.expressionToColor(value.first) ?? style.color;
+          style.color =  style.color;
           break;
         case 'direction':
           style.direction = ExpressionMapping.expressionToDirection(value.first);
